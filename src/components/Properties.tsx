@@ -52,12 +52,12 @@ const Properties = () => {
   }, []);
 
   return (
-    <div className="px-3 md:px-20 py-3 flex flex-col gap-[1rem] mb-[5rem]">
-      <p className="text-center text-xl lg:text-3xl font-semibold text-[#012970] capitalize">
-        Luxury
+    <div className="px-3 md:px-20 xl:px-40 py-3 flex flex-col gap-[0.5rem] mb-[5rem] mt-[2rem]">
+      <p className="text-lg lg:text-xl font-medium text-[#492433] capitalize">
+        Luxury Homes
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2rem] mt-[2rem]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[0.6rem]">
         {list?.map((item, idx) => (
           <PropertiesCard
             key={idx}

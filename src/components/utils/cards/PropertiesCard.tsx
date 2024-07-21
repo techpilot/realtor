@@ -23,14 +23,14 @@ const PropertiesCard: React.FC<PropertiesCardProps> = ({
     <div
       onMouseOver={() => setHovered(true)}
       onMouseOut={() => setHovered(false)}
-      className="bg-white shadow-lg h-[28rem] rounded-md flex flex-col 
-        items-center gap-5 md:hover:scale-105 lg:hover:scale-110 transition duration-500 cursor-pointer"
+      className="bg-white shadow-lg h-[23rem] md:h-[24rem] xl:h-[23rem] rounded-sm flex flex-col 
+       cursor-pointer"
     >
       <div className="w-full h-[15rem] relative">
         <Image
           src={image}
           alt=""
-          className="max-h-full min-h-full max-w-full min-w-full object-cover rounded-t-md"
+          className="max-h-full min-h-full max-w-full min-w-full object-cover rounded-t-sm"
         />
 
         {hovered && (
@@ -47,7 +47,7 @@ const PropertiesCard: React.FC<PropertiesCardProps> = ({
               <Image
                 src={facebook_icon}
                 alt=""
-                className="h-[22px] w-[22px] cursor-pointer"
+                className="h-[25px] w-[25px] cursor-pointer"
               />
               <Image
                 src={instagram_icon}
@@ -64,12 +64,24 @@ const PropertiesCard: React.FC<PropertiesCardProps> = ({
         )}
       </div>
 
-      <div className="flex flex-col items-center gap-1 p-3 lg:p-3 pt-0 text-center">
-        <p className="lg:text-xl text-[#012970] capitalize font-semibold">
-          {name}
+      <div className="flex flex-col gap-2 px-3 py-2">
+        <div className="w-full flex items-center gap-2">
+          <p className="text-sm text-black capitalize font-medium">
+            $1,390,000
+          </p>
+          <div className="h-1 w-1 rounded-full bg-gray-400"></div>
+          <p className="text-sm capitalize text-gray-700 font-light">
+            3 Bedroom Apartment
+          </p>
+        </div>
+
+        <p className="text-sm capitalize text-gray-700 font-light">
+          1580 Pacific Ave Unit P4
         </p>
-        <p className="text-xs lg:text-sm font-medium text-[#5e5e5e] italic leading-normal">
-          {description}
+
+        <p className="text-sm text-gray-700 font-light">
+          This is a 3 bedroom apartment for elites. Enjoy a luxurious treatment
+          and have peace for once and all
         </p>
       </div>
     </div>

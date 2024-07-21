@@ -1,7 +1,13 @@
+import Banner from './Banner';
 import Properties from './Properties';
 
 const HomePage = () => {
-  return <Properties />;
+  return (
+    <>
+      <Banner />
+      <Properties />
+    </>
+  );
 };
 
 export default HomePage;
