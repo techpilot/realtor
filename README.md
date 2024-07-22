@@ -1,9 +1,5 @@
 <br />
 <div align="center">
-  <p>
-    <img src="/public/andromedia.png" alt="Logo" width="80" height="80"/>
-  </p>
-
   <h3 align="center">REALTOR</h3>
 
   <p align="center">
@@ -22,8 +18,8 @@ Realtor is a Real Estate Listing project with the following features: Property L
 
 ### Built With
 
-- [Typescript][JavaScript_url]
-- [Next.js][React_js]
+- [Typescript][Typescript_url]
+- [Next.js][Next]
 
 ## Getting Started
 
@@ -79,4 +75,4 @@ Setup and run this project in your computer.
   ```
 
 [Next]: https://nextjs.org/
-[JavaScript_url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[Typescript_url]: https://www.typescriptlang.org/
