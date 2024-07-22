@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<br />
+<div align="center">
+  <p>
+    <img src="/public/andromedia.png" alt="Logo" width="80" height="80"/>
+  </p>
+
+  <h3 align="center">REALTOR</h3>
+
+  <p align="center">
+    We're passionate about transforming the way Real Estate operate.
+    <br />
+    <br />
+    <a href="comming soon">View Demo</a>
+    ·
+    <a href="https://github.com/techpilot/realtor/issues">Report Bug</a>
+  </p>
+</div>
+
+## About The Project
+
+Realtor is a Real Estate Listing project with the following features: Property Listing, Property Details Page, User Authentication, and Responsive Design.
+
+### Built With
+
+- [Typescript][JavaScript_url]
+- [Next.js][React_js]
 
 ## Getting Started
 
-First, run the development server:
+Setup and run this project in your computer.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  ```sh
+  sudo apt install nodejs
+  ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- yarn
 
-## Learn More
+  ```sh
+  npm install --global yarn
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/techpilot/realtor.git
+   ```
+2. Install packages
+   ```sh
+   yarn
+   ```
+3. Run the project
+   ```sh
+   yarn dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Git
 
-## Deploy on Vercel
+- add
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  ```sh
+  git add .
+  ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- commit ()
+
+  ```sh
+  git commit -m "state your changes"
+  ```
+
+- push (only pushes buildable code)
+
+  ```sh
+  git push origin branchName
+  ```
+
+[Next]: https://nextjs.org/
+[JavaScript_url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
