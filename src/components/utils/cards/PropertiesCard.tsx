@@ -6,6 +6,7 @@ import facebook_icon from '@/assets/svgs/facebook-icon.svg';
 import instagram_icon from '@/assets/svgs/instagram-icon.svg';
 import location_icon from '@/assets/svgs/location-icon.svg';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface PropertiesCardProps {
   name?: string;
@@ -18,6 +19,7 @@ const PropertiesCard: React.FC<PropertiesCardProps> = ({
   description,
   image
 }) => {
+  const router = useRouter();
   const [hovered, setHovered] = useState(false);
   return (
     <div
@@ -25,6 +27,7 @@ const PropertiesCard: React.FC<PropertiesCardProps> = ({
       onMouseOut={() => setHovered(false)}
       className="bg-white shadow-lg h-[23rem] md:h-[24rem] xl:h-[23rem] rounded-sm flex flex-col 
        cursor-pointer"
+      onClick={() => router.push(`/properties/2`)}
     >
       <div className="w-full h-[15rem] relative">
         <Image
