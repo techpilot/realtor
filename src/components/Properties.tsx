@@ -10,8 +10,7 @@ const Properties = () => {
   useEffect(() => {
     const getRates = async () => {
       try {
-        const data = await fetchRates('93505');
-        console.log(data);
+        await fetchRates();
       } catch (error) {
         console.log('fetch error', error);
       } finally {

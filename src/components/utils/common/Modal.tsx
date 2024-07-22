@@ -24,8 +24,9 @@ function Modal() {
       setLoading(true);
       const response = await signIn(email, password);
       console.log(response);
-      localStorage.setItem('access_token', response.accessToken);
-      localStorage.setItem('email', response.email!);
+
+      localStorage.setItem('access_token', response?.accessToken!);
+      localStorage.setItem('email', response?.email!);
       setNotification('Successfully logged in');
       setLoading(false);
       setTimeout(() => {

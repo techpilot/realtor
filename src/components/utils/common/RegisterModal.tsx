@@ -23,9 +23,8 @@ function RegisterModal() {
     try {
       setLoading(true);
       const response = await register(email, password);
-      console.log(response);
-      localStorage.setItem('access_token', response.accessToken);
-      localStorage.setItem('email', response.email!);
+      localStorage.setItem('access_token', response?.accessToken!);
+      localStorage.setItem('email', response?.email!);
 
       setNotification('Successfully Signed up');
       setLoading(false);

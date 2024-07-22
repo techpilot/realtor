@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // api.bridgedataoutput.com/api/v2/OData/test/Property?access_token=6baca547742c6f96a6ff71b138424f21
 
-export async function fetchRates(loc: string) {
+export async function fetchRates() {
   const url = `https://realty-in-us.p.rapidapi.com/properties/v3/list-similar-homes?limit=10&status=for_sale`;
   const options = {
     headers: {
@@ -13,6 +13,5 @@ export async function fetchRates(loc: string) {
   };
 
   const response = await axios.get(url, options);
-  console.log('response', response);
   return response.data;
 }

@@ -6,14 +6,15 @@ import {
 } from 'firebase/auth';
 import { auth } from './config';
 
+interface ExtendedUser extends User {
+  accessToken?: string;
+}
+
 export const signIn = async (email: string, password: string) => {
   try {
-    const userCredential = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    return userCredential.user;
+    await signInWithEmailAndPassword(auth, email, password);
+    const user = getCurrentUser();
+    return user;
   } catch (error) {
     console.log('Error signing in:', error);
     throw error;
@@ -22,12 +23,9 @@ export const signIn = async (email: string, password: string) => {
 
 export const register = async (email: string, password: string) => {
   try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    return userCredential.user;
+    await createUserWithEmailAndPassword(auth, email, password);
+    const user = getCurrentUser();
+    return user;
   } catch (error) {
     console.error('Error registering:', error);
     throw error;
@@ -43,6 +41,6 @@ export const logout = async () => {
   }
 };
 
-export const getCurrentUser = (): User | null => {
+export const getCurrentUser = (): ExtendedUser | null => {
   return auth.currentUser;
 };
