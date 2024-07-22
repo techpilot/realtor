@@ -52,13 +52,18 @@ const DetailsHeader = () => {
       )}
 
       {accessToken && (
-        <p
-          onClick={handleLogout}
-          title="click to logout"
-          className="cursor-pointer text-xs md:text-sm font-medium min-w-max hover:text-[#492433] text-black"
-        >
-          {email}
-        </p>
+        <div className="flex items-center gap-3">
+          <p className="cursor-pointer text-xs md:text-sm font-medium min-w-max text-black hidden md:block">
+            {email}
+          </p>
+
+          <button
+            onClick={handleLogout}
+            className="px-3 py-2 bg-transparent rounded-md w-[6rem] font-medium text-sm border border-black text-black"
+          >
+            Sign out
+          </button>
+        </div>
       )}
     </div>
   );

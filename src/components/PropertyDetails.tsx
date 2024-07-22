@@ -1,25 +1,38 @@
 import PropertyBanner from './PropertyBanner';
 import AgentCard from './utils/cards/AgentCard';
+import { list } from '@/components/utils/data/data';
+import NotFound from '@/components/utils/common/NotFound';
 
 const PropertyDetails = () => {
+  const urlParts = window.location.pathname.split('/');
+  const selectedText = urlParts[2];
+
+  const pageData = list.find(
+    (item) => item.name.toLowerCase().replace(/\s+/g, '-') === selectedText
+  );
+
+  if (pageData === undefined || pageData === null) {
+    return <NotFound />;
+  }
+
   return (
     <div>
-      <PropertyBanner />
+      <PropertyBanner image={pageData?.image} />
 
       <div className="px-3 md:px-20 xl:px-32 flex flex-col lg:flex-row justify-between gap-5 mt-[2rem]">
         <div className="w-full md:w-[85%]">
           <div className="flex flex-col gap-2">
-            <p className="text-2xl text-black font-medium">$1,390,000</p>
+            <p className="text-2xl text-black font-medium">{pageData?.price}</p>
             <p className="text-lg capitalize text-black font-medium">
-              3 Bedroom Apartment
+              {pageData?.name}
             </p>
             <p className="text-base capitalize text-gray-700 font-light">
-              1580 Pacific Ave Unit P4
+              {pageData?.location}
             </p>
 
-            <p className="text-base capitalize text-gray-700 font-light">
+            {/* <p className="text-base capitalize text-gray-700 font-light">
               Washington Virginia Vale Neighborhood
-            </p>
+            </p> */}
           </div>
 
           <div className="flex flex-col gap-2 mt-[1.5rem]">
@@ -28,13 +41,12 @@ const PropertyDetails = () => {
             </p>
 
             <p className="text-base text-gray-700 font-light">
-              This is a 3 bedroom apartment for elites. Enjoy a luxurious
-              treatment and have peace for once and all
+              {pageData?.description}
             </p>
           </div>
         </div>
 
-        <AgentCard />
+        <AgentCard name={pageData?.agent} phone={pageData?.agent_phone} />
       </div>
     </div>
   );

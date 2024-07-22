@@ -1,5 +1,4 @@
 'use client';
-
 import Image from 'next/image';
 import x_icon from '@/assets/svgs/twitter-icon.svg';
 import facebook_icon from '@/assets/svgs/facebook-icon.svg';
@@ -12,28 +11,39 @@ interface PropertiesCardProps {
   name?: string;
   description?: string;
   image?: any;
+  price?: string;
+  location?: string;
 }
 
 const PropertiesCard: React.FC<PropertiesCardProps> = ({
   name,
   description,
-  image
+  image,
+  price,
+  location
 }) => {
   const router = useRouter();
   const [hovered, setHovered] = useState(false);
+
+  const generateSlug = (name: string) => {
+    const lowerCaseName = name.toLowerCase();
+    const nameWithDashes = lowerCaseName.replace(/\s+/g, '-');
+    return nameWithDashes;
+  };
+
   return (
-    <div
+    <a
       onMouseOver={() => setHovered(true)}
       onMouseOut={() => setHovered(false)}
       className="bg-white shadow-lg h-[23rem] md:h-[24rem] xl:h-[23rem] rounded-sm flex flex-col 
        cursor-pointer"
-      onClick={() => router.push(`/properties/2`)}
+      href={`/properties/${generateSlug(name!)}`}
     >
       <div className="w-full h-[15rem] relative">
         <Image
           src={image}
           alt=""
-          className="max-h-full min-h-full max-w-full min-w-full object-cover rounded-t-sm"
+          className="max-h-[15rem] min-h-[15rem] max-w-full min-w-full object-cover rounded-t-sm"
         />
 
         {hovered && (
@@ -69,25 +79,22 @@ const PropertiesCard: React.FC<PropertiesCardProps> = ({
 
       <div className="flex flex-col gap-2 px-3 py-2">
         <div className="w-full flex items-center gap-2">
-          <p className="text-sm text-black capitalize font-medium">
-            $1,390,000
-          </p>
+          <p className="text-sm text-black capitalize font-medium">{price}</p>
           <div className="h-1 w-1 rounded-full bg-gray-400"></div>
-          <p className="text-sm capitalize text-gray-700 font-light">
-            3 Bedroom Apartment
-          </p>
+          <p className="text-sm capitalize text-gray-700 font-light">{name}</p>
         </div>
 
         <p className="text-sm capitalize text-gray-700 font-light">
-          1580 Pacific Ave Unit P4
+          {location}
         </p>
 
         <p className="text-sm text-gray-700 font-light">
-          This is a 3 bedroom apartment for elites. Enjoy a luxurious treatment
-          and have peace for once and all
+          {description?.length! > 90
+            ? `${description?.slice(0, 85)}...`
+            : description}
         </p>
       </div>
-    </div>
+    </a>
   );
 };
 
