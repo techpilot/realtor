@@ -6,7 +6,7 @@
     We're passionate about transforming the way Real Estate operate.
     <br />
     <br />
-    <a href="comming soon">View Demo</a>
+    <a href="https://realtor-topaz.vercel.app/">View Website</a>
     ·
     <a href="https://github.com/techpilot/realtor/issues">Report Bug</a>
   </p>
