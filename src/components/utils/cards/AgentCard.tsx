@@ -9,7 +9,7 @@ const AgentCard = () => {
       <p className="p-3 rounded-md bg-gray-50 text-gray-700 font-light my-[0.5rem]">
         Hi Tara, I would like to know more about this listing.
       </p>
-      <button className="bg-[#492433] p-3 w-full text-white rounded-md">
+      <button className="bg-[#492433] text-sm p-3 w-full text-white rounded-md">
         <a
           href="https://wa.me/+2349160862314"
           target="_blank"

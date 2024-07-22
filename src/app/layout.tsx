@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import Modal from '@/components/utils/common/Modal';
+import { Suspense } from 'react';
+import RegisterModal from '@/components/utils/common/RegisterModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +19,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Suspense fallback={<>Loading...</>}>
+          <Modal />
+        </Suspense>
+        <Suspense fallback={<>Loading...</>}>
+          <RegisterModal />
+        </Suspense>
+      </body>
     </html>
   );
 }
